@@ -1,17 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+       {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('styles/app.scss') }}">
         {% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+        <title>{% block title %}{% endblock %} - Arcadia</title>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header class="navbar">
+            <div class="container navbar-expand-lg d-flex align-items-center justify-content-between py-2 mx-4 mx-lg-auto">
+                    <div class="logo">
+                        <a href="/" class="">
+                        <img class="img-fluid" src="assets/img/Logo Arcadia.png" alt="Logo Arcadia">
+                        </a>
+                    </div>
+
+                    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    
+
+                    <nav class="navbar-collapse collapse justify-content-end text-uppercase py-3" id="navbarScroll">
+                        <ul class="nav navbar-nav nav-pills">
+                            <li class="nav-item me-3"><a href="/le-parc" class="nav-link">Le parc</a></li>
+                            <li class="nav-item me-3"><a href="/les-animaux" class="nav-link">Les animaux</a></li>
+                            <li class="nav-item me-3"><a href="/infos-pratiques" class="nav-link">Infos pratiques</a></li>
+                            <li class="nav-item me-3"><a href="/activites" class="nav-link">Activités</a></li>
+                            <li class="nav-item me-3"><a href="/contact" class="nav-link">Contact</a></li>
+                            <li class="nav-item"><a href="/connexion" class="nav-link">Connexion</a></li>
+                            <li class="nav-item"><a href="#" id="logout" class="nav-link">Déconnexion</a></li>
+                        </ul>
+                    </nav>
+                </div>
+        </header>
+
+
+        <main id="main-page">
+            <!-- Le contenu du site sera injecté ici -->
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer>
+            <div class="container m-4 mx-lg-auto">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-12 my-3">
+                        <h3>Parc Animalier Arcadia</h3>
+                        <p>
+                            Route d'Anzat <br>
+                            63420 Ardes-sur-Couze
+                         </p>
+                        <p>
+                            Ouvert de février à décembre <br>
+                            y compris les jours fériés
+                        </p>
+                        <a href="/contact">Contactez-nous</a>
+                    </div>
+                        <div class="col-lg-4 col-md-4 col-12 my-3">
+                            <h3>Nos engagements</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Protégeons les espèces rares et menacées</a></li>
+                                <li><a href="#">Sensibilisons à la biodiversité</a></li>
+                                <li><a href="#">Agissons pour le bien-être des animaux</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Presse</a></li>
+                                <li><a href="#">Entreprises, CSE </a></li>
+                                <li><a href="#">colaires et centres de loisirs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12 my-3">
+                            <h3>Préparer sa visite</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">J'achète mes billets</a></li>
+                                <li><a href="#">Je prépare ma visite</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                            <ul class="d-flex list-unstyled">
+                                <li class="me-3"><a href="#"><i class="bi bi-instagram"></i></a></li>
+                                <li class="me-3"><a href="#"><i class="bi bi-tiktok"></i></a></li>
+                                <li class="me-3"><a href="#"><i class="bi bi-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+        <script type="module" src="Router/Router.js"></script>
+        <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
