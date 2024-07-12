@@ -1,0 +1,19 @@
+footer {
+    background: $color-primary;
+    color: $color-light;
+    font-family: $font-family-text;
+    font-size: 1.4rem; /* 14px */
+    position: absolute;
+    width: 100%;
+
+    a {
+        color: $color-light;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+
+}

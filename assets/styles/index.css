@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem=10px */
+}
+
+body {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem; /* 16px */
+}
+body h1 {
+  font-size: 5rem;
+  color: hsl(214, 71%, 24%);
+  font-family: "Asap", sans-serif;
+  font-weight: 700;
+}
+body h2 {
+  font-family: "Asap", sans-serif;
+  font-weight: 700;
+  color: hsl(167, 100%, 15%);
+  font-size: 3.5rem;
+}
+body h3 {
+  font-size: 2rem;
+  font-family: "Asap", sans-serif;
+  font-weight: 700;
+}
+body .breadcrumb-item a {
+  color: hsl(23, 100%, 24%);
+}/*# sourceMappingURL=index.css.map */
