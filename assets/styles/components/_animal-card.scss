@@ -1,0 +1,25 @@
+.animal-card {
+    position: relative;
+
+    h3 {
+        font-size: 3.5rem;
+        color: $color-light;
+        position: absolute;
+        top:80%;
+        left:5%;
+    }
+
+    i {
+        font-size: 3.5rem;
+        color: $color-light;
+        position: absolute;
+        top:78%;
+        right:5%;
+
+        &:hover {
+            scale: 1.2;
+            transition: all 0.3s;
+
+        }
+    }
+}
