@@ -1,20 +1,232 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<!-- Hero -->
+<section class="d-flex align-items-center min-vh-100" id="hero">
+    <div class="container text-uppercase text-center">
+        <h1>Explorez l'univers d'Arcadia</h1>
+    </div>
+</section>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<!-- Additional information -->
+<section id="additionnalinfo" class="py-5 my-5">
+    <div class="container">
+        <div class="row arcadiainfo1 pb-5">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card-info d-flex align-items-center justify-content-center">
+                    <div class="text-center today mt-5 mb-4">
+                        <p class="fw-bold">Aujourd'hui : 10h00 - 18h30</p>
+                    </div>
+                </div>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Applications/MAMP/htdocs/arcadia/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/Applications/MAMP/htdocs/arcadia/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card-info d-flex align-items-center justify-content-center">
+                    <div class="mt-5 mb-4">
+                        <p class="fw-bold"><a href="#"><i class="bi bi-ticket-perforated-fill"></i> J'achète mes billets</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card-info d-flex align-items-center justify-content-center ">
+                    <div class="mt-5 mb-4">
+                        <p class="fw-bold"><a href="#"><i class="bi bi-map-fill"></i> Je prépare ma visite</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="row arcadiainfo2">
+            <div>
+                <h2>Arcadia reconnu parmi les plus prestigieux parcs animaliers de France et d’Europe </h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                <a href="/les-animaux" class="btn btn-lg">Je découvre les animaux</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Icons Informations -->
+<section id="inconsinfos" class="py-5 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="py-3">
+                    <img src="{{asset('images/icons/famille.png')}}" alt="famille" class="pb-3">
+                    <h3>Une aventure inoubliable en famille</h3>
+                    <p>Une journée unique avec vos enfants sur les pistes du monde</p>
+                </div>
+            </div>
+        
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="py-3">
+                    <img src="{{asset('images/icons/animaux.png')}}" alt="Patte d'animal" class="pb-3">
+                    <h3>Un respect des animaux et de la nature</h3>
+                    <p>Observez la faune sauvage vivant sur de vastes territoires</p>
+                </div>
+            </div>
+        
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="py-3">
+                    <img src="{{asset('images/icons/panneau.png')}}" alt="Panneau" class="pb-3">
+                    <h3>Un bel espace naturel de 350 hectares</h3>
+                    <p>Explorez les habitats et baladez-vous dans un écrin de nature</p>
+                </div>
+            </div>
+        
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="py-3">
+                    <img src="{{asset('images/icons/recherche.png')}}" alt="Loupe" class="pb-3">
+                    <h3>Un lieu de conservation et de recherche</h3>
+                    <p>Conservation des espèces en voie de disparition pour les générations futures</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Habitats -->
+<section id="habitats" class="py-5 my-5">
+    <div class="container">
+            <div class="intro-habitat pb-3">
+                <h2>Découvrez nos habitats avec plus de 160 espèces différentes</h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+            </div>
+            
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="animal-card mb-2">
+                    <img src="{{asset('images/elephants.png')}}" alt="elephants" class="img-fluid w-100">
+                    <div class="content-habitat">
+                        <h3 class="">Savane</h3>
+                        <a href=""><i class="bi bi-arrow-right-square-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="animal-card mb-2">
+                    <img src="{{asset('images/perroquets.png')}}" alt="perroquets" class="img-fluid w-100">
+                    <div class="content-habitat d-flex justify-content-between align-items-center">
+                        <h3>Jungle</h3>
+                        <a href=""><i class="bi bi-arrow-right-square-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="animal-card mb-2">
+                    <img src="{{asset('images/crocodiles.png')}}" alt="crocodiles" class="img-fluid w-100">
+                    <div class="content-habitat d-flex justify-content-between align-items-center">
+                        <h3>Marais</h3>
+                        <a href=""><i class="bi bi-arrow-right-square-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-5">
+    <div class="container">
+        <div class="intro-services pb-3">
+            <h2>Vivez des expériences uniques</h2>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="pb-2">
+
+                <div class="card-service rounded d-flex justify-content-evenly p-5">
+                    <img src="{{asset('images/visiter.jpg')}}" alt="" class="w-50 me-5">
+                    <div class="card-content my-auto d-flex flex-column gap-2">
+                        <h3>Visitez les habitats avec un guide gratuitement</h3>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        <a href="">Visitez le parc avec un guide</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="card-service rounded d-flex justify-content-evenly p-5 ">
+                    <img src="{{asset('images/train.jpg')}}" alt="" class="w-50 me-5">
+                    <div class="card-content my-auto d-flex flex-column gap-2">
+                        <h3>Partez à la découverte des animaux en petit train</h3>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        <a href="">Découvrir le parc en train</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Advice -->
+<section id="advice" class="py-5 my-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center pb-3">
+            <h2>Les visiteurs témoignent</h2>
+            <a href="" class="btn btn-lg">Laisser un avis</a>
+        </div>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+    
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="pb-2">
+                    <div class="card-advice my-auto rounded p-5">
+                        <i class="bi bi-star-fill"></i>
+                        <h3 class="mt-2">Nous avons pu apprécier chaque instant</h3>
+                        <p>Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius dui.</p>
+                        <p>Anais</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="pb-2">
+                    <div class="card-advice my-auto rounded p-5">
+                        <i class="bi bi-star-fill"></i>
+                        <h3 class="mt-2">Nous avons pu apprécier chaque instant</h3>
+                        <p>Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius dui.</p>
+                        <p>Anais</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card-advice my-auto rounded p-5">
+                    <i class="bi bi-star-fill"></i>
+                    <h3 class="mt-2">Nous avons pu apprécier chaque instant</h3>
+                    <p>Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius dui.</p>
+                    <p>Anais</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- newsletter -->
+<section id="newsletter" class="py-5 mt-5">
+    <div class="container pb-3">
+        <h2>Recevez en exclusivité toutes les actualités du Parc Arcadia</h2>
+        <p>Actualités, événements, bons plans.... Ne manquez aucune info !</p>
+
+        <div class="col-lg-8 col-md-12 col-12">
+            <form action="URL_DE_TRAITEMENT" method="POST">
+                <div class=" d-flex flex-row gap-2 mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Prénom" aria-label="Firstname" required>
+                    <input type="email" class="form-control form-control-lg" placeholder="E-mail" aria-label="Email" required>
+                    <button type="submit" class="btn btn-lg btn-primary text-nowrap">Je m'abonne</button>
+                </div>
+                <div class="form-check fs-5">
+                    <input class="form-check-input" type="checkbox" value="newsletter" id="flexCheckDefault" required>
+                    <label class="form-check-label" for="flexCheckDefault">En soumettant, vous acceptez de recevoir les actualités de Parc Arcadia par e-mail. En savoir plus sur la gestion de vos données et vos droits.</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 {% endblock %}

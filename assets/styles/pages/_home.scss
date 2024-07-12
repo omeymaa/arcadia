@@ -1,0 +1,98 @@
+#hero {
+    background: url('../images/zebres.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    h1 {
+        color: $color-light;
+    }
+}
+
+#additionnalinfo {
+
+    .card-info {
+            box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.10);
+    }
+
+    .arcadiainfo1 {
+
+    a {
+        color: $color-secondary;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+        p {
+            font-size: 1.8rem;
+        }
+
+        .today {
+            color : $color-accent;
+        }
+    }
+
+    .arcadiainfo2 {
+        .btn {
+            @include btnAccent;
+        }
+    }
+}
+
+#inconsinfos {
+    background-color: $color-bg-secondary;
+
+    h3 {
+        color: $color-secondary;
+    }
+
+    p {
+        color: $color-secondary;
+    }
+}
+
+#services {
+    .card-service {
+        background-color: $color-secondary;
+
+        .card-content {
+            color: white;
+
+            a {
+                color: white;
+
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+#advice {
+
+    .btn {
+        @include btnAccent;
+    }
+
+    .card-advice {
+        background-color: $color-bg-secondary;
+        color: $color-secondary;
+
+        i{
+            font-size: 2rem;
+        }
+    }
+}
+
+#newsletter {
+    background-color: $color-bg-primary;
+    color: $color-primary;
+
+    .btn {
+        @include btnAccent;
+    }
+}

@@ -83,4 +83,119 @@ footer a {
 }
 footer a:hover {
   text-decoration: underline;
+}
+
+.animal-card {
+  position: relative;
+}
+.animal-card h3 {
+  font-size: 3.5rem;
+  color: hsl(0, 0%, 97%);
+  position: absolute;
+  top: 80%;
+  left: 5%;
+}
+.animal-card i {
+  font-size: 3.5rem;
+  color: hsl(0, 0%, 97%);
+  position: absolute;
+  top: 78%;
+  right: 5%;
+}
+.animal-card i:hover {
+  scale: 1.2;
+  transition: all 0.3s;
+}
+
+#hero {
+  background: url("../images/zebres.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#hero h1 {
+  color: hsl(0, 0%, 97%);
+}
+
+#additionnalinfo .card-info {
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.1);
+}
+#additionnalinfo .arcadiainfo1 a {
+  color: hsl(214, 71%, 24%);
+  text-decoration: none;
+}
+#additionnalinfo .arcadiainfo1 a:hover {
+  text-decoration: underline;
+}
+#additionnalinfo .arcadiainfo1 p {
+  font-size: 1.8rem;
+}
+#additionnalinfo .arcadiainfo1 .today {
+  color: hsl(23, 100%, 24%);
+}
+#additionnalinfo .arcadiainfo2 .btn {
+  background-color: hsl(23, 100%, 24%);
+  border: hsl(23, 100%, 24%);
+  color: hsl(0, 0%, 97%);
+  padding: 1rem;
+}
+#additionnalinfo .arcadiainfo2 .btn:hover {
+  scale: 1.1;
+  transition: all 0.3s;
+}
+
+#inconsinfos {
+  background-color: hsl(213, 23%, 92%);
+}
+#inconsinfos h3 {
+  color: hsl(214, 71%, 24%);
+}
+#inconsinfos p {
+  color: hsl(214, 71%, 24%);
+}
+
+#services .card-service {
+  background-color: hsl(214, 71%, 24%);
+}
+#services .card-service .card-content {
+  color: white;
+}
+#services .card-service .card-content a {
+  color: white;
+}
+#services .card-service .card-content a:hover {
+  text-decoration: none;
+}
+
+#advice .btn {
+  background-color: hsl(23, 100%, 24%);
+  border: hsl(23, 100%, 24%);
+  color: hsl(0, 0%, 97%);
+  padding: 1rem;
+}
+#advice .btn:hover {
+  scale: 1.1;
+  transition: all 0.3s;
+}
+#advice .card-advice {
+  background-color: hsl(213, 23%, 92%);
+  color: hsl(214, 71%, 24%);
+}
+#advice .card-advice i {
+  font-size: 2rem;
+}
+
+#newsletter {
+  background-color: hsl(171, 16%, 92%);
+  color: hsl(167, 100%, 15%);
+}
+#newsletter .btn {
+  background-color: hsl(23, 100%, 24%);
+  border: hsl(23, 100%, 24%);
+  color: hsl(0, 0%, 97%);
+  padding: 1rem;
+}
+#newsletter .btn:hover {
+  scale: 1.1;
+  transition: all 0.3s;
 }/*# sourceMappingURL=app.css.map */
