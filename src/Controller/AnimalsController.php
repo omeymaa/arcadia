@@ -15,4 +15,12 @@ class AnimalsController extends AbstractController
             'controller_name' => 'AnimalsController',
         ]);
     }
+
+    #[Route('/les-animaux/la-savane', name: 'app_animals_savannah')]
+    public function savannah(): Response
+    {
+        return $this->render('animals/savannah.html.twig', [
+            'controller_name' => 'AnimalsController',
+        ]);
+    }
 }

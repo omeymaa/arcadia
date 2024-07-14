@@ -107,6 +107,20 @@ footer a:hover {
   transition: all 0.3s;
 }
 
+#cta-habitat a {
+  background-color: hsl(0, 0%, 97%);
+  border: hsl(0, 0%, 97%);
+  color: hsl(214, 71%, 24%);
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 1rem;
+}
+#cta-habitat a:hover {
+  background-color: hsl(214, 71%, 24%);
+  border: hsl(0, 0%, 97%) solid 1px;
+  color: hsl(0, 0%, 97%);
+}
+
 #hero {
   background: url("../images/zebres.png");
   background-size: cover;
@@ -205,4 +219,11 @@ footer a:hover {
 }
 #jumbotron p {
   color: hsl(214, 71%, 24%);
+}
+
+#cta-habitat .content-cta {
+  background-color: hsl(214, 71%, 24%);
+}
+#cta-habitat h2 {
+  color: hsl(0, 0%, 97%);
 }/*# sourceMappingURL=app.css.map */
