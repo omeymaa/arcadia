@@ -19,8 +19,12 @@ class AnimalsController extends AbstractController
     #[Route('/les-animaux/la-savane', name: 'app_animals_savannah')]
     public function savannah(): Response
     {
-        return $this->render('animals/savannah.html.twig', [
-            'controller_name' => 'AnimalsController',
-        ]);
+        return $this->render('animals/savannah.html.twig');
+    }
+
+    #[Route('/les-animaux/le-marais', name: 'app_animals_marsh')]
+    public function marsh(): Response
+    {
+        return $this->render('animals/marsh.html.twig');
     }
 }
