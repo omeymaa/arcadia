@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les animaux de la Jungle{% endblock %}
+
+{% block body %}
+<!-- Jumbotron -->
+<section id="jumbotron">
+    <div class="p-5">
+        <div class="container py-5">
+          <h1>Les animaux de la Jungle</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-chevron">
+              <li class="breadcrumb-item">
+                <a href="/"><i class="bi bi-house-door-fill"></i></a>
+              </li>
+              <li class="breadcrumb-item">
+                <a class=" text-decoration-none" href="/les-animaux">Les animaux</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">La jungle</li>
+            </ol>
+          </nav>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Habitat -->
+<section id="intro-habitat" class="py-5 my-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="intro-habitat">
+                    <h2>Découvrez les habitats fascinants des animaux de la jungle</h2>
+                    <p>Plongez au cœur de la jungle et rencontrez ses habitants extraordinaires ! Notre page
+                        dédiée aux animaux de la jungle vous invite à un voyage immersif à la découverte de 
+                        créatures spectaculaires. Partez à la rencontre des <strong>félins majestueux, des primates 
+                        agiles, des reptiles mystérieux et des amphibiens fascinants</strong> qui peuplent cet écosystème luxuriant.
+                    </p>
+                    <p>
+                        Sensibilisez-vous à la conservation de ces animaux fragiles et découvrez les actions 
+                        menées par le zoo pour protéger la jungle et sa biodiversité.
+                    </p>
+                    <p>
+                        Préparez votre visite en organisant vos activités en famille. 
+                        Laissez-vous transporter par la magie de la jungle et vivez une expérience inoubliable au zoo !
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-12">
+                <img src="{{asset('images/jungle.jpg')}}" alt="marais" class="img-fluid w-100 rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Animals -->
+<section id="habitats" class="py-5 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="animal-card mb-2">
+                    <img src="{{asset('images/lion.jpg')}}" alt="lion" class="img-fluid w-100">
+                    <div class="content-habitat">
+                        <h3>Simba</h3>
+                        <a href="#"><i class="bi bi-arrow-right-square-fill"></i></a>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="animal-card mb-2">
+                    <img src="{{asset('images/lion.jpg')}}" alt="lion" class="img-fluid w-100">
+                    <div class="content-habitat">
+                        <h3>Simba</h3>
+                        <a href="#"><i class="bi bi-arrow-right-square-fill"></i></a>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="animal-card mb-2">
+                    <img src="{{asset('images/lion.jpg')}}" alt="lion" class="img-fluid w-100">
+                    <div class="content-habitat">
+                        <h3>Simba</h3>
+                    <a href="#"><i class="bi bi-arrow-right-square-fill"></i></a>
+                    </div>
+                </div>
+            </div>  
+            
+        </div>
+    </div>
+</section>
+
+<!-- CTA Habitat -->
+<section id="cta-habitat" class="py-5">
+    <div class="container">
+        <div class="content-cta rounded py-5 my-5">
+            <h2 class="text-center pt-5 pb-3">Découvrez les autres habitats du zoo Arcadia</h2>
+            <div class="button-cta d-flex justify-content-center pb-5">
+                <a href="#" class="btn btn-lg me-4">Les animaux de la savane</a>
+                <a href="#" class="btn btn-lg">Les animaux du marais</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

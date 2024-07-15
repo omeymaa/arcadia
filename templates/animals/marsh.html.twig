@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les animaux du Marais{% endblock %}
+
+{% block body %}
+<!-- Jumbotron -->
+<section id="jumbotron">
+    <div class="p-5">
+        <div class="container py-5">
+          <h1>Les animaux du Marais</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-chevron">
+              <li class="breadcrumb-item">
+                <a href="/"><i class="bi bi-house-door-fill"></i></a>
+              </li>
+              <li class="breadcrumb-item">
+                <a class=" text-decoration-none" href="/les-animaux">Les animaux</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Le marais</li>
+            </ol>
+          </nav>
+        </div>
+    </div>
+</section>
+
+<!-- Introduction Habitat -->
+<section id="intro-habitat" class="py-5 my-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="intro-habitat">
+                    <h2>Mystères des marais : Un monde aquatique à découvrir !</h2>
+                    <p>
+                        Plongez dans l'univers envoûtant des marais et rencontrez ses habitants singuliers ! 
+                        Notre page dédiée aux animaux des marais vous invite à un voyage immersif au cœur de cet écosystème humide regorgeant de vie. 
+                        Partez à la rencontre des <strong>amphibiens agiles, des reptiles discrets, des oiseaux majestueux et des mammifères semi-aquatiques</strong> 
+                        qui peuplent cet habitat unique.
+                    </p>
+                    <p>
+                        Observez les comportements fascinants de ces animaux parfaitement adaptés à leur <strong>milieu humide</strong>. 
+                        Découvrez les cycles de vie extraordinaires des grenouilles, des salamandres, des serpents et des loutres. 
+                        Apprenez à identifier les différentes espèces qui peuplent les marais et les zones humides environnantes.
+                    </p>
+                    <p>
+                        Sensibilisez-vous à la fragilité de ces écosystèmes essentiels et découvrez les actions menées par le zoo 
+                        pour protéger les marais et la biodiversité qu'ils abritent.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-12">
+                <img src="{{asset('images/marais.jpg')}}" alt="marais" class="img-fluid w-100 rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Animals -->
+<section id="habitats" class="py-5 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="animal-card mb-2">
+                    <img src="{{asset('images/lion.jpg')}}" alt="lion" class="img-fluid w-100">
+                    <div class="content-habitat">
+                        <h3>Simba</h3>
+                        <a href="#"><i class="bi bi-arrow-right-square-fill"></i></a>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="animal-card mb-2">
+                    <img src="{{asset('images/lion.jpg')}}" alt="lion" class="img-fluid w-100">
+                    <div class="content-habitat">
+                        <h3>Simba</h3>
+                        <a href="#"><i class="bi bi-arrow-right-square-fill"></i></a>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="animal-card mb-2">
+                    <img src="{{asset('images/lion.jpg')}}" alt="lion" class="img-fluid w-100">
+                    <div class="content-habitat">
+                        <h3>Simba</h3>
+                    <a href="#"><i class="bi bi-arrow-right-square-fill"></i></a>
+                    </div>
+                </div>
+            </div>  
+            
+        </div>
+    </div>
+</section>
+
+<!-- CTA Habitat -->
+<section id="cta-habitat" class="py-5">
+    <div class="container">
+        <div class="content-cta rounded py-5 my-5">
+            <h2 class="text-center pt-5 pb-3">Découvrez les autres habitats du zoo Arcadia</h2>
+            <div class="button-cta d-flex justify-content-center pb-5">
+                <a href="#" class="btn btn-lg me-4">Les animaux de la savane</a>
+                <a href="#" class="btn btn-lg">Les animaux de la jungle</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
