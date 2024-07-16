@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-nous !{% endblock %}
+
+{% block body %}
+<!-- Jumbotron -->
+<section id="jumbotron">
+    <div class="p-5">
+        <div class="container py-5">
+          <h1>Contactez-nous</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-chevron">
+              <li class="breadcrumb-item">
+                <a href="/"><i class="bi bi-house-door-fill"></i></a>
+              </li>
+              <li class="breadcrumb-item">
+                <a class=" text-decoration-none" href="/contact">Contact</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form -->
+<section id="contact" class="py-5">
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="pb-2">
+                    <div class="intro-contact pb-3">
+                        <h2>Contacter l’équipe d'Arcadia</h2>
+                        <p>Vous avez une question ou besoin de renseignements complémentaires ? 
+                        Pour plus d'informations sur le parc Arcadia, vous pouvez nous contacter via le formulaire de contact suivant :</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-12">
+                {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-md-6 mb-2">{{ form_row(form.firstname) }} </div>
+                        <div class="col-md-6 mb-2">{{ form_row(form.lastname) }} </div>
+                        <div class="col-12 mb-2">{{ form_row(form.email) }} </div>
+                        <div class="col-12 mb-2">{{ form_row(form.subject) }} </div>
+                        <div class="col-12 mb-4">{{ form_row(form.message) }} </div>
+                        <div class="col-12 mb-4">{{ form_row(form.rgpd) }} </div>
+                        <div class="col-12 ">{{ form_row(form.save, { 'attr' : { 'class': 'btn-accent' } }) }} </div>
+                    </div>
+                {{ form_end(form) }} 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- newsletter -->
+<section id="newsletter" class="py-5 mt-5">
+    <div class="container pb-3">
+        <h2>Recevez en exclusivité toutes les actualités du Parc Arcadia</h2>
+        <p>Actualités, événements, bons plans.... Ne manquez aucune info !</p>
+
+        <div class="col-lg-8 col-md-12 col-12">
+            <form action="URL_DE_TRAITEMENT" method="POST">
+                <div class=" d-flex flex-row gap-2 mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Prénom" aria-label="Firstname" required>
+                    <input type="email" class="form-control form-control-lg" placeholder="E-mail" aria-label="Email" required>
+                    <button type="submit" class="btn btn-lg btn-primary text-nowrap">Je m'abonne</button>
+                </div>
+                <div class="form-check fs-5">
+                    <input class="form-check-input" type="checkbox" value="newsletter" id="flexCheckDefault" required>
+                    <label class="form-check-label" for="flexCheckDefault">En soumettant, vous acceptez de recevoir les actualités de Parc Arcadia par e-mail. En savoir plus sur la gestion de vos données et vos droits.</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

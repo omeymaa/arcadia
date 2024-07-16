@@ -16,3 +16,9 @@
     }
 
 }
+
+body {
+    .btn-accent {
+        @include btnAccent;
+    }
+}

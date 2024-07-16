@@ -121,6 +121,17 @@ footer a:hover {
   color: hsl(0, 0%, 97%);
 }
 
+body .btn-accent {
+  background-color: hsl(23, 100%, 24%);
+  border: hsl(23, 100%, 24%);
+  color: hsl(0, 0%, 97%);
+  padding: 1rem;
+}
+body .btn-accent:hover {
+  scale: 1.1;
+  transition: all 0.3s;
+}
+
 #hero {
   background: url("../images/zebres.png");
   background-size: cover;
@@ -181,16 +192,6 @@ footer a:hover {
   text-decoration: none;
 }
 
-#advice .btn {
-  background-color: hsl(23, 100%, 24%);
-  border: hsl(23, 100%, 24%);
-  color: hsl(0, 0%, 97%);
-  padding: 1rem;
-}
-#advice .btn:hover {
-  scale: 1.1;
-  transition: all 0.3s;
-}
 #advice .card-advice {
   background-color: hsl(213, 23%, 92%);
   color: hsl(214, 71%, 24%);
