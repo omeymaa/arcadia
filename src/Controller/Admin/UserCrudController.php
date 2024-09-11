@@ -4,12 +4,11 @@ namespace App\Controller\Admin;
 
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -33,7 +32,13 @@ class UserCrudController extends AbstractCrudController
             TextField::new('firstname')->setLabel('Prénom'),
             TextField::new('lastname')->setLabel('Nom'),
             EmailField::new('email')->setLabel('E-mail'),
-            TextField::new('password')->setLabel('Mot de passe')->onlyOnForms(),
+            TextField::new('plainPassword', 'password')
+                ->setLabel('Mot de passe')
+                ->setFormType(PasswordType::class)
+                ->setFormTypeOption('mapped', false)
+                ->setFormTypeOption('required', true)
+                ->setFormTypeOption('hash_property_path', 'password')
+                ->onlyOnForms(),
             ChoiceField::new('role')
             ->setLabel('Rôle')
             ->setChoices([
@@ -44,4 +49,5 @@ class UserCrudController extends AbstractCrudController
             ->renderExpanded(false),
         ];
     }
+    
 }
