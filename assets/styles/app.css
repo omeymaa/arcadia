@@ -199,6 +199,21 @@ body .btn-accent:hover {
 #advice .card-advice i {
   font-size: 2rem;
 }
+#advice .comment-btn .btn {
+  background-color: hsl(23, 100%, 24%);
+  border: hsl(23, 100%, 24%);
+  color: hsl(0, 0%, 97%);
+  padding: 1rem;
+}
+#advice .comment-btn .btn:hover {
+  scale: 1.1;
+  transition: all 0.3s;
+}
+#advice .btn-arcadia-primary {
+  background-color: hsl(167, 100%, 15%);
+  border: hsl(167, 100%, 15%);
+  color: hsl(0, 0%, 97%);
+}
 
 #newsletter {
   background-color: hsl(171, 16%, 92%);

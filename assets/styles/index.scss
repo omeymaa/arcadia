@@ -36,6 +36,19 @@ $font-family-text: "Open Sans", sans-serif;
     }
 }
 
+@mixin btnPrimary {
+    background-color: $color-primary;
+    border: $color-primary;
+    color: $color-light;
+    padding: 1rem;
+
+    &:hover {
+        scale: 1.1;
+        transition: all 0.3s;
+
+    }
+}
+
 // general style
 * {
     padding: 0;

@@ -73,7 +73,6 @@
 }
 
 #advice {
-
     .card-advice {
         background-color: $color-bg-secondary;
         color: $color-secondary;
@@ -82,6 +81,19 @@
             font-size: 2rem;
         }
     }
+
+   .comment-btn {
+        .btn {
+            @include btnAccent;
+        }
+    }
+
+    .btn-arcadia-primary {
+        background-color: $color-primary;
+        border: $color-primary;
+        color: $color-light;
+    }
+
 }
 
 #newsletter {
