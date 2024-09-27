@@ -166,12 +166,46 @@
     </div>
 </section>
 
-<!-- Advice -->
+<!-- Comment -->
 <section id="advice" class="py-5 my-5">
     <div class="container">
-        <div class="d-flex justify-content-between align-items-center pb-3">
+        <div class="d-flex justify-content-between align-items-center pb-3 comment-btn">
             <h2>Les visiteurs témoignent</h2>
-            <a href="" class="btn btn-lg btn-accent">Laisser un avis</a>
+            <!-- Bouton pour ouvrir la modal -->
+            <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#commentModal">
+                Laisser un avis
+            </button>
+        </div>
+        <!-- Modal Bootstrap pour soumettre un nouvel avis -->
+        <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="commentModalLabel">Laisser un avis</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {{ form_start(form, {'attr': {'id': 'commentForm'}}) }}
+                            <div class="mb-3">
+                                {{ form_label(form.pseudonym, null, { 'label_attr': { 'class': 'form-label' } }) }}
+                                {{ form_widget(form.pseudonym, { 'attr': { 'class': 'form-control' } }) }}
+                            </div>
+                            <div class="mb-3">
+                                {{ form_label(form.comment, null, { 'label_attr': { 'class': 'form-label' } }) }}
+                                {{ form_widget(form.comment, { 'attr': { 'class': 'form-control' } }) }}
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary btn-arcadia-primary">Soumettre mon avis</button>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Zone pour afficher le message de confirmation -->
+        <div id="successMessage" style="display: none;" class="alert alert-success">
+            Votre avis a été soumis pour validation.
         </div>
         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
     
@@ -179,29 +213,16 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <div class="pb-2">
                     <div class="card-advice my-auto rounded p-5">
-                        <i class="bi bi-star-fill"></i>
-                        <h3 class="mt-2">Nous avons pu apprécier chaque instant</h3>
-                        <p>Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius dui.</p>
-                        <p>Anais</p>
+                        <!-- Affichage des commentaires acceptés -->
+                        <div id="comments-section">
+                            {% for comment in comments %}
+                                <h3 class="mt-2">{{ comment.pseudonym }}</h3>
+                                <p>{{ comment.comment }}</p>
+                            {% else %}
+                                <p>Aucun avis pour le moment.</p>
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="pb-2">
-                    <div class="card-advice my-auto rounded p-5">
-                        <i class="bi bi-star-fill"></i>
-                        <h3 class="mt-2">Nous avons pu apprécier chaque instant</h3>
-                        <p>Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius dui.</p>
-                        <p>Anais</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="card-advice my-auto rounded p-5">
-                    <i class="bi bi-star-fill"></i>
-                    <h3 class="mt-2">Nous avons pu apprécier chaque instant</h3>
-                    <p>Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius dui.</p>
-                    <p>Anais</p>
                 </div>
             </div>
         </div>
@@ -229,4 +250,32 @@
         </div>
     </div>
 </section>
+
+<!-- JavaScript pour gérer la soumission en AJAX -->
+<script>
+   document.getElementById('commentForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Empêche le rechargement de la page
+
+        const formData = new FormData(this);
+
+        fetch('{{ path('app_home') }}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Affiche le message de succès
+            document.querySelector('.modal-body').innerHTML = '<p class="text-success">' + data.message + '</p>';
+            
+            // Masque le bouton "Soumettre"
+            document.querySelector('.modal-footer button[type="submit"]').style.display = 'none';
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+        });
+    });
+</script>
 {% endblock %}
