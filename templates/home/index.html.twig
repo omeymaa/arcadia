@@ -210,21 +210,21 @@
         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
     
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="pb-2">
-                    <div class="card-advice my-auto rounded p-5">
-                        <!-- Affichage des commentaires acceptés -->
-                        <div id="comments-section">
-                            {% for comment in comments %}
-                                <h3 class="mt-2">{{ comment.pseudonym }}</h3>
-                                <p>{{ comment.comment }}</p>
-                            {% else %}
-                                <p>Aucun avis pour le moment.</p>
-                            {% endfor %}
+        <!-- Affichage des commentaires acceptés -->
+            {% for comment in comments %}
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="pb-2">
+                        <div class="card-advice my-auto rounded p-5">
+                            <h3 class="mt-2">{{ comment.pseudonym }}</h3>
+                            <p>{{ comment.comment }}</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% else %}
+                <div class="col-12">
+                    <p>Aucun avis pour le moment.</p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>

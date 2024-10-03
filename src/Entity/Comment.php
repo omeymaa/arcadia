@@ -29,12 +29,7 @@ class Comment
 
     public function __construct()
     {
-<<<<<<< HEAD
         $this->createdAt = new \DateTime(); // Initialisation de la date de création à la date actuelle
-=======
-        // Initialisation de la date de création à la date actuelle
-        $this->createdAt = new \DateTime();
->>>>>>> origin/comment
     }
 
     public function getId(): ?int
