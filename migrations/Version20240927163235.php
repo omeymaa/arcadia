@@ -20,7 +20,7 @@ final class Version20240927163235 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE comment ADD created_at DATETIME NOT NULL, CHANGE pseudonym pseudonym VARCHAR(50) NOT NULL, CHANGE comment comment TINYTEXT NOT NULL, CHANGE status status VARCHAR(50) NOT NULL');
+        //$this->addSql('ALTER TABLE comment ADD created_at DATETIME NOT NULL, CHANGE pseudonym pseudonym VARCHAR(50) NOT NULL, CHANGE comment comment TINYTEXT NOT NULL, CHANGE status status VARCHAR(50) NOT NULL');
     }
 
     public function down(Schema $schema): void
