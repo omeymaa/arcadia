@@ -2,14 +2,17 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Breed;
 use App\Entity\Animal;
+use App\Entity\Habitat;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class AnimalCrudController extends AbstractCrudController
 {
@@ -30,18 +33,16 @@ class AnimalCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('name')->setLabel('Prénom de l\'animal'),
-            ChoiceField::new('breed')->setLabel('Race de l\'animal'),
-            //AssociationField::new('breed'),
-            ChoiceField::new('habitat')
-                ->setRequired(true)
-                ->setChoices([
-                    'Savane' => 'savannah',
-                    'Jungle' => 'jungle',
-                    'Marais' => 'Marsh',
-                ]),
-            ImageField::new('images')
+            TextField::new('name', 'Prénom de l\'animal'),
+            AssociationField::new('breed', 'Race de l\'animal')
+                ->setFormTypeOption(
+                    'choice_label',
+                    fn (Breed $breed) => $breed->getName() . ' - Famille des ' . $breed->getFamily() 
+                ),
+            AssociationField::new('habitat', 'Habitat'),
+            ImageField::new('images', 'Image')
                 ->setUploadDir('assets/images/animaux/')
+                ->setBasePath('/assets/images/animaux/')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
         ];
     }

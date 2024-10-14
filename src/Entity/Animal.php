@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\AnimalRepository;
+use App\Entity\Breed;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AnimalRepository;
 
 #[ORM\Entity(repositoryClass: AnimalRepository::class)]
 class Animal
@@ -16,8 +17,9 @@ class Animal
     #[ORM\Column(length: 50)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $breed = null;
+    #[ORM\ManyToOne(targetEntity: Breed::class)]
+    #[ORM\JoinColumn(nullable: false)]    
+    private ?Breed $breed = null; // 
 
     #[ORM\Column(length: 255)]
     private ?string $images = null;
@@ -42,12 +44,12 @@ class Animal
         return $this;
     }
 
-    public function getBreed(): ?string
+    public function getBreed(): ?Breed 
     {
         return $this->breed;
     }
 
-    public function setBreed(string $breed): static
+    public function setBreed(?Breed $breed): static 
     {
         $this->breed = $breed;
 
