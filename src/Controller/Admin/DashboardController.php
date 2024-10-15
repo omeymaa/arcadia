@@ -48,11 +48,11 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', User::class)->setPermission('ROLE_ADMIN');
-        yield MenuItem::linkToCrud('Avis', 'fas fa-list', Comment::class)->setPermission('ROLE_USER');
-       yield MenuItem::linkToCrud('Races', 'fas fa-list', Breed::class)->setPermission('ROLE_USER');
-        yield MenuItem::linkToCrud('Animaux', 'fas fa-list', Animal::class)->setPermission('ROLE_USER');
-        yield MenuItem::linkToCrud('Habitats', 'fas fa-list', Habitat::class)->setPermission('ROLE_USER');
-        yield MenuItem::linkToCrud('Vétérinaire', 'fas fa-list', VeterinaryVisit::class)->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Comment::class)->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Races', 'fa-solid fa-shield-cat', Breed::class)->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Animaux', 'fa-solid fa-paw', Animal::class)->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Habitats', 'fa-solid fa-igloo', Habitat::class)->setPermission('ROLE_USER');
+        yield MenuItem::linkToCrud('Compte-rendu Vétérinaire', 'fa-solid fa-notes-medical', VeterinaryVisit::class)->setPermission('ROLE_USER');
 
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
