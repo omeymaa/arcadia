@@ -33,8 +33,8 @@ class HabitatCrudController extends AbstractCrudController
             TextField::new('title', 'Titre de la description'),
             TextEditorField::new('description'),
             ImageField::new('images', 'Image')
-            ->setUploadDir('assets/images/habitats/')
-            ->setBasePath('/assets/images/habitats/')
+            ->setUploadDir('public/uploads/habitats/')
+            ->setBasePath('uploads/habitats/')
             ->setUploadedFileNamePattern('[randomhash].[extension]')
         ];
     }

@@ -35,33 +35,17 @@
             </p>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-12">
+        		{% for habitat in habitats %}
+                    <div class="col-lg-4 col-md-6 col-12">
                 <div class="animal-card mb-2">
-                    <img src="{{asset('images/elephants.png')}}" alt="elephants" class="img-fluid w-100">
+                    <img src="/uploads/habitats/{{habitat.images}}" alt="{{habitat.name}}" class="img-fluid w-100">
                     <div class="content-habitat">
-                        <h3 class="">Savane</h3>
+                        <h3 class="">{{habitat.name}}</h3>
                         <a href="{{path('app_animals_savannah')}}"><i class="bi bi-arrow-right-square-fill"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="animal-card mb-2">
-                    <img src="{{asset('images/perroquets.png')}}" alt="perroquets" class="img-fluid w-100">
-                    <div class="content-habitat d-flex justify-content-between align-items-center">
-                        <h3>Jungle</h3>
-                        <a href="/la-jungle"><i class="bi bi-arrow-right-square-fill"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-12">
-                <div class="animal-card mb-2">
-                    <img src="{{asset('images/crocodiles.png')}}" alt="crocodiles" class="img-fluid w-100">
-                    <div class="content-habitat d-flex justify-content-between align-items-center">
-                        <h3>Marais</h3>
-                        <a href="/le-marais"><i class="bi bi-arrow-right-square-fill"></i></a>
-                    </div>
-                </div>
-            </div>
+                {% endfor %}
         </div>
     </div>
 </section>
