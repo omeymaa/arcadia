@@ -30,6 +30,7 @@ class HabitatCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name', 'Nom de l\'habitat'),
+            TextField::new('title', 'Titre de la description'),
             TextEditorField::new('description'),
             ImageField::new('images', 'Image')
             ->setUploadDir('assets/images/habitats/')
